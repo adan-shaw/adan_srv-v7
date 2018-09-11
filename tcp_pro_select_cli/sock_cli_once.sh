@@ -12,7 +12,7 @@ return;
 #
 ######################
 # 关键信息如下:
-test_count="10000"
+test_count="5000"
 srv_ip="127.0.0.1"
 srv_port="6666"
 __sleep="0" # 测试间隔休眠(单位秒)
@@ -37,15 +37,27 @@ tmp=$test_count
 while true
 do
 # 软件执行语句...
-(./obj_out "$srv_ip" "$srv_port" "hello adan, youre an asshole!")
+tmp2=$(./obj_out "$srv_ip" "$srv_port" "hello adan, youre an asshole!")
+echo "$tmp2" # 显示执行过程中, 所有打印出来的语句
+#echo "${#tmp2}" # 显示字符串长度(当前为82, 耍点小聪明, )
+#测试一次之后就知道字符串长度了
+#if test "$tmp2" = "send data";then
+	#let right_count=right_count+1
+#else
+	#let error_count=error_count+1
+#fi
+#
 sleep "$__sleep"
 #
 if test "$tmp" = "0";then
 	break
 fi
 let tmp=tmp-1
+#
 done
+#
 end_time=$(date)
+let tmp=test_count-tmp
 #
 # 打印测试报告
 sleep 1
@@ -53,14 +65,13 @@ echo ""
 echo ""
 echo "************************************"
 echo "<< test report >>"
-echo "start at :" "$xstart"
-echo "finish at:" "$xfinish"
+echo "start at :" "$start_time"
+echo "finish at:" "$end_time"
 echo "test count:" "$tmp"
-echo "right_count:" "$right_count"
-echo "error_count:" "$error_count"
+#echo "right_count:" "$right_count"
+#echo "error_count:" "$error_count"
 echo "__sleep:" "$__sleep"
 echo "************************************"
-
 
 
 
