@@ -7,6 +7,7 @@
 # cd tcp_pro_select
 # 1.
 # for srv: cd srv && make all
+# ulimit -n 4096
 # ./obj_out
 # 2.
 # for cli: cd cli && make all
