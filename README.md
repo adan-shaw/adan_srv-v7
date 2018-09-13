@@ -13,9 +13,13 @@
 # for cli: cd cli && make all
 # chmod 755 ./sock_cli_once.sh
 # ./sock_cli_once.sh
+# 3.
+# attention: 
+# if you wanna use tcp_pro_select2 version, please use root user and order: ulimit -n 40960
+# and one more things, tcp_pro_select2 is a crap but codes is more different.
 #
-# project list:
-# 1.<tcp_pro_select>
+#
+# project notices:
 #   it's a <echo-server> server && client demo,
 #   and working with Multi process, Tcp sync socket, 
 #   and Io multiplexing choosed select mode,
