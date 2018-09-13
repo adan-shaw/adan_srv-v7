@@ -353,7 +353,7 @@ bool fork_mission(void){
     	//当前新建的子进程
 			//_printf("i am son process, pid = %d\n", getpid());//for test
 			tmp = fork();
-			if(tmp != 0)
+			if(tmp != 0 && tmp != -1)
 				exit(0);//子进程马上结束
 			//孙进程继续执行任务			
 			tmp = do_mission(sfd_acc);
